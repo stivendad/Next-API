@@ -33,3 +33,16 @@ export const removeProductFromCart = (id: string) => {
 
     setCookie('cart', JSON.stringify(cookieCart));
 }
+
+export const removeSingleItemFromCart = async (id: string) => {
+    const cookieCart = getCookieCart();
+    if(!cookieCart[id]) return;
+
+    if (cookieCart[id] > 1) {
+        cookieCart[id] = cookieCart[id] - 1;
+    } else {
+        delete cookieCart[id];
+    }
+
+    setCookie('cart', JSON.stringify(cookieCart));
+}
