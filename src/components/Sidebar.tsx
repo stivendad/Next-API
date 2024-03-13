@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { SidebarItem } from "@/components"
-import { IoBasketOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline } from "react-icons/io5";
+import { IoBasketOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline, IoPersonCircleOutline } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -32,6 +32,11 @@ const items = [
         href: '/dashboard/products',
         icon: <IoBasketOutline size={30} />,
         title: 'Productos',
+    },
+    {
+        href: '/dashboard/profile',
+        icon: <IoPersonCircleOutline size={30} />,
+        title: 'Perfil',
     },
 ];
 
